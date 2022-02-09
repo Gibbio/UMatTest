@@ -99,7 +99,7 @@ auto main(int argc, char *argv[]) -> int {
 void MatProcessing(const std::string& name){
 	Mat img,dst;
 	img = imread(name.c_str());
-	cv::cvtColor(img,img,CV_BGR2GRAY);
+	cv::cvtColor(img,img,cv::COLOR_BGR2GRAY);
 	bilateralFilter(img, dst, 0, 10, 3);
 }
 /*****************************************************************************************************************************/
@@ -107,7 +107,7 @@ void MatProcessing(const std::string& name){
 void UMatProcessing(const std::string& name){
 	UMat Uimg, Udst;
 	Uimg = imread(name.c_str(), IMREAD_UNCHANGED).getUMat(ACCESS_READ);
-	cv::cvtColor(Uimg,Uimg,CV_BGR2GRAY);
+	cv::cvtColor(Uimg,Uimg,cv::COLOR_BGR2GRAY);
 	bilateralFilter(Uimg, Udst, 0, 10, 3);
 }
 /****************************************************************************************************************************/
